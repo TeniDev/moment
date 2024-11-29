@@ -8,7 +8,7 @@ import '../../features/features.dart';
 part 'routes_handlers.dart';
 part 'routes_names.dart';
 
-final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
+final rootNavigatorKey = GlobalKey<NavigatorState>();
 
 class CustomRouter {
   static final _router = GoRouter(

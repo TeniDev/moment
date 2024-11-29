@@ -15,23 +15,23 @@ class LocalStorageHelper {
   }
 
   Future<void> clear() async {
-    _clearBox<String>('default');
+    _clearBox<String>('defaultBox');
   }
 
   Future<String?> read({required String key}) {
-    return _getFromBox<String>('default', key);
+    return _getFromBox<String>('defaultBox', key);
   }
 
   Future<void> update({required String key, required String value}) {
-    return _put<String>('default', key, value);
+    return _put<String>('defaultBox', key, value);
   }
 
   Future<void> write({required String key, required String value}) async {
-    _addToBox<String>('default', key, value);
+    _addToBox<String>('defaultBox', key, value);
   }
 
   Future<void> delete({required String key}) async {
-    _deleteFromBox<String>('default', key);
+    _deleteFromBox<String>('defaultBox', key);
   }
 
   /// Clear all values in the box with the given boxName.
