@@ -17,6 +17,8 @@ dependencies:
   # Graphics
   animate_do: ^3.3.4
   cupertino_icons: ^1.0.8
+  moment_ui:
+    path: packages/moment_ui
 
   # State Management
   bloc: ^8.1.4
@@ -65,16 +67,6 @@ flutter:
   uses-material-design: true
   generate: true
 
-  fonts:
-    - family: Lato
-      fonts:
-        - asset: assets/fonts/Lato-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Lato-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Lato-Bold.ttf
-          weight: 700
-
 flutter_intl:
   enabled: true
   class_name: IntlTranslations
@@ -82,5 +74,3 @@ flutter_intl:
   arb_dir: lib/i18n
   output_dir: lib/gen
 
-flutter_gen:
-  outputs: lib/gen

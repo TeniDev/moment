@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:moment_ui/moment_ui.dart';
 
 import '../core/router/router.dart';
-import '../core/theme/theme.dart';
 import '../gen/l10n.dart';
 
 class MomentApp extends StatelessWidget {

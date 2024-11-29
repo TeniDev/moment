@@ -1,7 +1,10 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:moment/core/router/router.dart';
+import 'package:moment_ui/moment_ui.dart';
 
 import '../../core/constants/constants.dart';
 import '../../core/utils/utils.dart';
@@ -28,7 +31,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
 
   _loadUserData(Emitter<AppState> emit) async {
     emit(state.copyWith(isLoading: true));
-    //unawaited(startLoadingModal());
+    unawaited(startLoadingModal(rootNavigatorKey.currentContext!));
     try {
       final user = await _localStorageHelper.read(key: LocalStorageConstants.userKey);
 
@@ -39,7 +42,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
         ),
       );
 
-      // stopLoadingModal();
+      await stopLoadingModal(rootNavigatorKey.currentContext!);
     } catch (e) {
       logger.error(e.toString());
       emit(
@@ -47,11 +50,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
           isLoading: false,
         ),
       );
-      //await stopLoadingModal();
-      /* showErrorModal(
-        'Error al cargar los datos del usuario',
-      );
-      rootNavigatorKey.currentContext!.go(RoutesNames.login); */
+      await stopLoadingModal(rootNavigatorKey.currentContext!);
     }
   }
 }

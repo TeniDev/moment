@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:moment/gen/l10n.dart';
+import 'package:moment_ui/moment_ui.dart';
+
+part 'routes_handlers.dart';
+part 'routes_names.dart';
+
+final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 class CustomRouter {
   static final _router = GoRouter(
     debugLogDiagnostics: true,
-    initialLocation: '/home',
+    initialLocation: RoutesNames.login,
+    navigatorKey: rootNavigatorKey,
     routes: [
       GoRoute(
-        path: '/home',
-        builder: (context, state) => Scaffold(
-          appBar: AppBar(
-            title: const Text('Home'),
-          ),
-          body: Center(
-            child: Text(
-              IntlTranslations.of(context).hello_world,
-            ),
-          ),
-        ),
+        path: RoutesNames.login,
+        parentNavigatorKey: rootNavigatorKey,
+        pageBuilder: _loginPageHandler,
       ),
     ],
   );

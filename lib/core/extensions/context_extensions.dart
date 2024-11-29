@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:moment_ui/moment_ui.dart';
 
 import '../../gen/l10n.dart';
-import '../utils/utils.dart';
 
 extension ContextExtensions on BuildContext {
   IntlTranslations get locale => IntlTranslations.of(this);

@@ -8,6 +8,8 @@ class AppTheme {
         colorScheme: _colorScheme,
         textTheme: _textTheme,
         useMaterial3: true,
+        fontFamily: 'Lato',
+        package: 'moment_ui',
         brightness: Brightness.light,
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
