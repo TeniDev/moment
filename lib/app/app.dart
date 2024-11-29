@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../core/router/router.dart';
+import '../core/theme/theme.dart';
 import '../gen/l10n.dart';
 
 class MomentApp extends StatelessWidget {
@@ -12,7 +13,8 @@ class MomentApp extends StatelessWidget {
     final router = CustomRouter.router;
 
     return MaterialApp.router(
-      title: 'Material App',
+      title: 'Moment App',
+      theme: AppTheme().getTheme(),
       localizationsDelegates: const [
         IntlTranslations.delegate,
         GlobalMaterialLocalizations.delegate,
